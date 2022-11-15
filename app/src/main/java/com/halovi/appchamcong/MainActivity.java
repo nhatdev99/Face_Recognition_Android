@@ -2,6 +2,7 @@ package com.halovi.appchamcong;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +27,7 @@ import android.os.ParcelFileDescriptor;
 import android.text.InputType;
 import android.util.Pair;
 import android.util.Size;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +50,8 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -78,6 +82,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     FaceDetector detector;
+    private ActionBar toolbar;
 
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     PreviewView previewView;
@@ -116,6 +121,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         registered=readFromSP(); //Load saved faces from memory when app starts
         setContentView(R.layout.activity_main);
+
+        // set text toolbar
+
+
+        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        navigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+
+            }
+        });
+
         facePreview =findViewById(R.id.imageView);
         reco_name =findViewById(R.id.textView);
 //        textAbove_preview =findViewById(R.id.textAbovePreview);

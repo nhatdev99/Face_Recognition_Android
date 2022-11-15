@@ -12,15 +12,14 @@
         android:id="@+id/linearLayout2"
         android:layout_width="373dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="40dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        >
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:layout_width="match_parent"
@@ -42,8 +41,8 @@
 
     <RelativeLayout
         android:id="@+id/theNguoiDung"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="370dp"
+        android:layout_height="88dp"
         android:layout_marginHorizontal="10dp"
         android:background="@drawable/card_roundable_50"
         android:elevation="2dp"
@@ -59,8 +58,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="103dp"
-            android:layout_height="103dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentStart="true"
             app:cardCornerRadius="1000dp">
 
@@ -72,8 +71,8 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="103dp"
-                    android:layout_height="103dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:background="@drawable/circle"
                     android:elevation="1dp"
                     tools:srcCompat="@drawable/circle" />
@@ -108,7 +107,8 @@
         android:layout_height="331dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="50dp"
-        android:background="#fff"
+        android:background="@drawable/card_roundable_50"
+        android:elevation="20dp"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,19 +131,18 @@
                 <androidx.camera.view.PreviewView
                     android:id="@+id/previewView"
                     android:layout_width="387dp"
-                    android:layout_height="331dp"/>
+                    android:layout_height="331dp" />
 
-                    <ImageButton
-                        android:id="@+id/button5"
-                        android:layout_width="53dp"
-                        android:layout_height="53dp"
-                        android:background="@drawable/button_round"
-                        android:backgroundTint="@color/teal_200"
-                        android:elevation="1dp"
-                        android:src="@drawable/ic_camera_flip"
-                        android:layout_marginTop="250dp"
-                        android:layout_marginStart="300dp"
-                        />
+                <ImageButton
+                    android:id="@+id/button5"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="250dp"
+                    android:background="@drawable/button_round"
+                    android:backgroundTint="@color/teal_200"
+                    android:elevation="1dp"
+                    android:src="@drawable/ic_camera_flip" />
             </FrameLayout>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
@@ -152,8 +151,8 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/button_round"
         android:elevation="2dp"
         android:minWidth="50dp"
@@ -161,6 +160,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
